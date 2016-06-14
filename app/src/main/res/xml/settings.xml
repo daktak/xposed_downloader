@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/settings" >
+        <EditTextPreference
+            android:title="@string/project"
+            android:summary="@string/project_sum"
+            android:defaultValue="@string/project_val"
+            android:key="prefProject"/>
+        <EditTextPreference
+            android:title="@string/device"
+            android:summary="@string/device_sum"
+            android:defaultValue="@string/device_val"
+            android:key="prefDevice"/>
+        <EditTextPreference
+            android:title="@string/prefix"
+            android:summary="@string/prefix_sum"
+            android:defaultValue="@string/prefix_val"
+            android:key="prefPrefix"/>
+        <EditTextPreference
+            android:title="@string/directory"
+            android:summary="@string/directory_sum"
+            android:defaultValue=""
+            android:dependency="prefExternal"
+            android:key="prefDirectory"/>
+        <CheckBoxPreference
+            android:title="@string/dailydownload"
+            android:summary="@string/dailydownload_sum"
+            android:defaultValue="false"
+            android:key="prefDailyDownload" />
+        <EditTextPreference
+            android:title="@string/hour"
+            android:summary="@string/hour_sum"
+            android:defaultValue="@string/hour_val"
+            android:key="prefHour"
+            android:dependency="prefDailyDownload" />
+        <EditTextPreference
+            android:title="@string/minute"
+            android:summary="@string/minute_sum"
+            android:defaultValue="@string/minute_val"
+            android:key="prefMinute"
+            android:dependency="prefDailyDownload" />
+        <CheckBoxPreference
+            android:title="@string/auto"
+            android:summary="@string/pref_auto"
+            android:defaultValue="true"
+            android:dependency="prefDailyDownload"
+            android:key="prefAuto" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/adv_set">
+        <CheckBoxPreference
+            android:title="@string/external_browser"
+            android:summary="@string/external_sum"
+            android:defaultValue="false"
+            android:key="prefExternal"
+            android:disableDependentsState="true" />
+        <CheckBoxPreference
+            android:title="@string/wifionly"
+            android:summary="@string/wifi_sum"
+            android:defaultValue="true"
+            android:key="prefWIFI"
+            android:dependency="prefExternal" />
+        <EditTextPreference
+            android:title="@string/base_url"
+            android:summary="@string/base_sum"
+            android:defaultValue="@string/base_val"
+            android:key="prefBase"/>
+        <EditTextPreference
+            android:title="@string/selector"
+            android:summary="@string/selector_sum"
+            android:defaultValue="@string/selector_val"
+            android:key="prefSelector"/>
+        <!-- <EditTextPreference
+            android:title="@string/selectorDL"
+            android:summary="@string/selectorDL_sum"
+            android:defaultValue="@string/selectorDL_val"
+            android:key="prefSelectorDL"/> -->
+    </PreferenceCategory>
+</PreferenceScreen>

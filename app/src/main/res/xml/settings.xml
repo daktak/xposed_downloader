@@ -17,7 +17,7 @@
             android:summary="@string/prefix_sum"
             android:defaultValue="@string/prefix_val"
             android:key="prefPrefix"/>
-        <EditTextPreference
+        <Preference
             android:title="@string/directory"
             android:summary="@string/directory_sum"
             android:defaultValue=""

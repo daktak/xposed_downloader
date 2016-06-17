@@ -25,6 +25,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".DirectoryPicker"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".SetPreferenceActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/action_settings">

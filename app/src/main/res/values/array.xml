@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arch">
+        <item>arm</item>
+        <item>arm64</item>
+        <item>x86</item>
+    </string-array>
+    <string-array name="api">
+        <item>sdk21</item>
+        <item>sdk22</item>
+        <item>sdk23</item>
+    </string-array>
+
+</resources>

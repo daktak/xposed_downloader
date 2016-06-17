@@ -2,16 +2,20 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/settings" >
-        <EditTextPreference
+        <ListPreference
             android:title="@string/project"
             android:summary="@string/project_sum"
             android:defaultValue="@string/project_val"
-            android:key="prefProject"/>
-        <EditTextPreference
+            android:key="prefProject"
+            android:entryValues="@array/api"
+            android:entries="@array/api" />
+        <ListPreference
             android:title="@string/device"
             android:summary="@string/device_sum"
             android:defaultValue="@string/device_val"
-            android:key="prefDevice"/>
+            android:key="prefDevice"
+            android:entryValues="@array/arch"
+            android:entries="@array/arch" />
         <EditTextPreference
             android:title="@string/prefix"
             android:summary="@string/prefix_sum"

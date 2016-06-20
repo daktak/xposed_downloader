@@ -33,4 +33,5 @@
     <string name="minute_sum"></string>
     <string name="pref_auto">Ensure Daily Download is scheduled after boot</string>
     <string name="auto">Auto Start</string>
+    <string name="choose">Choose</string>
 </resources>

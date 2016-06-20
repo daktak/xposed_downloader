@@ -6,9 +6,9 @@
     >
    <ListView android:id="@android:id/list"
    		android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"/>
-   <Button android:text="Choose"
+   <Button android:text="@string/choose"
    		android:id="@+id/btnChoose"
    		android:layout_width="fill_parent"
    		android:layout_height="wrap_content"/>

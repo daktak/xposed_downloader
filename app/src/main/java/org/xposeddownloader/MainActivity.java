@@ -1,12 +1,14 @@
 package org.xposeddownloader;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
@@ -25,9 +27,11 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * daktak
@@ -55,6 +59,8 @@ public class MainActivity extends AppCompatActivity
 
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 
+        setApi(this);
+
         String[] names = new String[] {getString(R.string.loading)};
         ListView mainListView = (ListView) findViewById( R.id.listView );
         ListAdapter listAdapter =  new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
@@ -76,6 +82,48 @@ public class MainActivity extends AppCompatActivity
         setAlarm(this);
         run(this);
 
+    }
+
+    @TargetApi(21)
+    public String get64(){
+        String out = "";
+        if (Build.SUPPORTED_64_BIT_ABIS.length > 0) {
+            out += "64";
+        }
+        return out;
+    }
+
+
+    public void setApi(Context context) {
+        SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String api = mySharedPreferences.getString("prefProject",getString(R.string.project_val));
+        String newApi = "sdk" +Build.VERSION.SDK_INT;
+        SharedPreferences.Editor prefEdit = mySharedPreferences.edit();
+        //and newApi in list?
+        if  (!Arrays.asList(R.array.api).contains(newApi)) {
+            newApi = getString(R.string.apidefualt);
+        }
+        if (api.equalsIgnoreCase("unset")) {
+            prefEdit.remove("prefProject");
+            prefEdit.putString("prefProject", newApi);
+            Log.d(LOGTAG, "Setting api: " + newApi);
+        }
+        String arch = mySharedPreferences.getString("prefDevice",getString(R.string.device_val));
+        String arch1 = Build.CPU_ABI;
+        String newArch = arch1.substring(0,3).toLowerCase(Locale.ENGLISH);
+
+        newArch += get64();
+
+        //and newArc8h in list?
+        if  (!Arrays.asList(R.array.arch).contains(newArch)) {
+            newApi = getString(R.string.apidefualt);
+        }
+        if (arch.equalsIgnoreCase("unset")){
+            prefEdit.remove("prefDevice");
+            prefEdit.putString("prefDevice",newArch);
+            Log.d(LOGTAG, "Setting arch: " + newArch);
+        }
+        prefEdit.apply();
     }
 
     public void setAlarm(Context context){
@@ -239,7 +287,7 @@ public class MainActivity extends AppCompatActivity
             int slash = i.lastIndexOf("/")+1;
             try {
                 String filename = i.substring(slash);
-
+                /*
                 if (EasyPermissions.hasPermissions(this, perms2)) {
                     /*
                     for (int j = 0; j < file.length; j++) {
@@ -248,8 +296,8 @@ public class MainActivity extends AppCompatActivity
                             filename += " Have";
                         }
                     }
-                    */
-                }
+
+                }*/
 
                 names.add(filename);
             } catch (Exception e){

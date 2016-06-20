@@ -77,7 +77,8 @@ public class DirectoryPicker extends ListActivity {
         String name = dir.getName();
         if(name.length() == 0)
             name = "/";
-        btnChoose.setText("Choose " + "'" + name + "'");
+        String btnTxt = getString(R.string.choose) + " '" + name + "'";
+        btnChoose.setText(btnTxt);
         btnChoose.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 returnDir(dir.getAbsolutePath());
@@ -138,7 +139,7 @@ public class DirectoryPicker extends ListActivity {
         SharedPreferences.Editor prefEdit = mySharedPreferences.edit();
         prefEdit.remove("prefDirectory");
         prefEdit.putString("prefDirectory",path);
-        prefEdit.commit();
+        prefEdit.apply();
         finish();
     }
 

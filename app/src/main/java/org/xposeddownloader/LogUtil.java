@@ -24,7 +24,7 @@ public class LogUtil {
     
     @SuppressWarnings("unchecked")
     public static String makeLogTag(Class cls) {
-        return "BasketBuild_" + cls.getSimpleName();
+        return "xposeddownloader_" + cls.getSimpleName();
     }
 
 }

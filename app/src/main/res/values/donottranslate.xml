@@ -4,8 +4,10 @@
     <string name="selectorDL_val" translatable="false">a[href$=.zip][class=btn btn-primary][rel=nofollow]</string>
     <string name="base_val" translatable="false">http://dl-xda.xposed.info</string>
     <string name="prefix_val" translatable="false">framework</string>
-    <string name="project_val" translatable="false">sdk23</string>
-    <string name="device_val" translatable="false">arm64</string>
+    <string name="project_val" translatable="false">unset</string>
+    <string name="device_val" translatable="false">unset</string>
+    <string name="archdefault" translatable="false">arm64</string>
+    <string name="apidefualt" translatable="false">sdk23</string>
     <string name="hour_val" translatable="false">3</string>
     <string name="minute_val" translatable="false">0</string>
 </resources>

@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity
         String newApi = "sdk" +Build.VERSION.SDK_INT;
         SharedPreferences.Editor prefEdit = mySharedPreferences.edit();
         //and newApi in list?
+        Log.d(LOGTAG, "Detected api: " + newApi);
         if  (!Arrays.asList(R.array.api).contains(newApi)) {
             newApi = getString(R.string.apidefualt);
         }
@@ -113,10 +114,10 @@ public class MainActivity extends AppCompatActivity
         String newArch = arch1.substring(0,3).toLowerCase(Locale.ENGLISH);
 
         newArch += get64();
-
+        Log.d(LOGTAG, "Detected arch: " + newArch);
         //and newArc8h in list?
         if  (!Arrays.asList(R.array.arch).contains(newArch)) {
-            newApi = getString(R.string.apidefualt);
+            newArch = getString(R.string.archdefault);
         }
         if (arch.equalsIgnoreCase("unset")){
             prefEdit.remove("prefDevice");
@@ -222,6 +223,14 @@ public class MainActivity extends AppCompatActivity
                 };
             e.execute();
             return true;
+        }
+        if (id == R.id.action_apkdl) {
+
+            Intent service = new Intent(this, Download.class);
+            service.putExtra("url",getString(R.string.xdathread));
+            service.putExtra("action",4);
+            this.startService(service);
+
         }
 
         return super.onOptionsItemSelected(item);

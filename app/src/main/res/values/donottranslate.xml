@@ -10,4 +10,7 @@
     <string name="apidefualt" translatable="false">sdk23</string>
     <string name="hour_val" translatable="false">3</string>
     <string name="minute_val" translatable="false">0</string>
+    <string name="xdathread" translatable="false">http://forum.xda-developers.com/showthread.php?t=3034811</string>
+    <string name="apksel" translatable="false">a[href^=attachment.php?]</string>
+    <string name="apkName" translatable="false">XposedInstaller.apk</string>
 </resources>

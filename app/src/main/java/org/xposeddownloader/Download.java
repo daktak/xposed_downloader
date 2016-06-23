@@ -46,6 +46,8 @@ public class Download extends Service {
             new ParseURLDownload().execute(new String[]{url});
         } else if (action == 3) {
             new downloadFirstThread().execute(new String[]{url});
+        } else if (action == 4) {
+            new ParseXDA().execute(new String[]{url});
         }
 
         return Service.START_NOT_STICKY;
@@ -117,18 +119,21 @@ public class Download extends Service {
         return prefix;
     }
 
+    public String getXDABase() {
+        String url = getString(R.string.xdathread).trim();
+        int slash = url.lastIndexOf("/");
+        return url.substring(0,slash+1);
+    }
 
-    public ArrayList<String> getDLUrl(String url){
+    public ArrayList<String> getXDAUrl(String url){
         Log.d(LOGTAG, "Download parse: " +url);
 
         ArrayList<String> urls = new ArrayList<String>();
-/*
+
         try {
 
             Document doc = Jsoup.connect(url).get();
-            SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-            String selector = mySharedPreferences.getString("prefSelectorDL",getString(R.string.selectorDL_val)).trim();
-            //String selector = getString(R.string.selectorDL_val);
+            String selector = getString(R.string.apksel).trim();
             Elements links = doc.select(selector);
             for (Element link : links) {
                 urls.add(link.attr("href"));
@@ -136,7 +141,14 @@ public class Download extends Service {
         } catch (Throwable t) {
             Log.e(LOGTAG,t.getMessage());
         }
-*/
+        return urls;
+    }
+
+    public ArrayList<String> getDLUrl(String url){
+        Log.d(LOGTAG, "Download parse: " +url);
+
+        ArrayList<String> urls = new ArrayList<String>();
+
         urls.add(url);
         return urls;
     }
@@ -156,6 +168,33 @@ public class Download extends Service {
 
             String url = getFirstUrl(array);
             new ParseURLDownload().execute(new String[]{url.toString()});
+
+        }
+    }
+    private class ParseXDA extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... strings) {
+            return getXDAUrl(strings[0]).toString();
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            String newS = s.substring(1,s.length()-1);
+            List<String> array = Arrays.asList(newS.split(","));
+            String url ="";
+            for (String i : array) {
+                String prefix = "";
+                if (!(i.startsWith("http"))) {
+                    prefix = getXDABase();
+                }
+                url = prefix+i;
+            }
+            if (!(url.isEmpty())){
+                String filename = getString(R.string.apkName);
+                download(url, getString(R.string.app_name), filename, filename, false);
+            }
 
         }
     }
@@ -182,17 +221,21 @@ public class Download extends Service {
             if (!(url.isEmpty())){
                 int slash = url.lastIndexOf("/");
                 String filename = url.substring(slash+1);
-                download(url, getString(R.string.app_name), filename, filename);
+                download(url, getString(R.string.app_name), filename, filename, true);
             }
 
         }
     }
-    public void download(String url, String desc, String title, String filename) {
+    public void download(String url, String desc, String title, String filename, boolean check) {
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String selector = mySharedPreferences.getString("prefSelector", getString(R.string.selector_val)).trim();
-        String exten = selector.substring(selector.lastIndexOf("."), selector.length() - 1);
-
-        if (url.endsWith(exten)) {
+        if (check) {
+            String selector = mySharedPreferences.getString("prefSelector", getString(R.string.selector_val)).trim();
+            String exten = selector.substring(selector.lastIndexOf("."), selector.length() - 1);
+            check = url.endsWith(exten);
+        } else {
+            check = true;
+        }
+        if (check) {
 
             Log.d(LOGTAG, "Downloading: " + url);
 

@@ -9,7 +9,12 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/action_reboot"
-        android:orderInCategory="99"
+        android:orderInCategory="98"
         android:title="@string/action_reboot"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_apkdl"
+        android:orderInCategory="99"
+        android:title="@string/action_apkdl"
         app:showAsAction="never" />
 </menu>

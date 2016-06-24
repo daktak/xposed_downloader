@@ -101,10 +101,10 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences.Editor prefEdit = mySharedPreferences.edit();
         //and newApi in list?
         Log.d(LOGTAG, "Detected api: " + newApi);
-        if  (!Arrays.asList(R.array.api).contains(newApi)) {
+        if  (!Arrays.asList(getResources().getStringArray(R.array.api)).contains(newApi)) {
             newApi = getString(R.string.apidefualt);
         }
-        if (api.equalsIgnoreCase("unset")) {
+        if (api.equalsIgnoreCase(getString(R.string.auto_detect))) {
             prefEdit.remove("prefProject");
             prefEdit.putString("prefProject", newApi);
             Log.d(LOGTAG, "Setting api: " + newApi);
@@ -116,10 +116,10 @@ public class MainActivity extends AppCompatActivity
         newArch += get64();
         Log.d(LOGTAG, "Detected arch: " + newArch);
         //and newArc8h in list?
-        if  (!Arrays.asList(R.array.arch).contains(newArch)) {
+        if  (!Arrays.asList(getResources().getStringArray(R.array.arch)).contains(newArch)) {
             newArch = getString(R.string.archdefault);
         }
-        if (arch.equalsIgnoreCase("unset")){
+        if (arch.equalsIgnoreCase(getString(R.string.auto_detect))){
             prefEdit.remove("prefDevice");
             prefEdit.putString("prefDevice",newArch);
             Log.d(LOGTAG, "Setting arch: " + newArch);

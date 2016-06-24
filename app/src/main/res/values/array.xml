@@ -4,11 +4,13 @@
         <item>arm</item>
         <item>arm64</item>
         <item>x86</item>
+        <item>@string/auto_detect</item>
     </string-array>
     <string-array name="api">
         <item>sdk21</item>
         <item>sdk22</item>
         <item>sdk23</item>
+        <item>@string/auto_detect</item>
     </string-array>
 
 </resources>

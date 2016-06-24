@@ -2,7 +2,7 @@
     <string name="app_name">Xposed Downloader</string>
     <string name="action_settings">Settings</string>
     <string name="action_reboot">Reboot to Recovery</string>
-    <string name="action_apkdl">DL Xposed Installer APK</string>
+    <string name="action_apkdl">DL Xposed Instfaller APK</string>
     <string name="project">API</string>
     <string name="device">Architecture</string>
     <string name="project_sum">SDK level</string>
@@ -34,5 +34,6 @@
     <string name="minute_sum"></string>
     <string name="pref_auto">Ensure Daily Download is scheduled after boot</string>
     <string name="auto">Auto Start</string>
+    <string name="auto_detect">Auto</string>
     <string name="choose">Choose</string>
 </resources>

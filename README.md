@@ -2,6 +2,10 @@
 # Xposed Downloader
 
 Similar to https://github.com/daktak/basketbuild_downloader but for Xposed Framework.
+<a href="https://f-droid.org/repository/browse/?fdid=org.xposeddownloader"><img
+      alt="Available on F-Droid" height="45" src="https://raw.githubusercontent.com/daktak/androidpn-client/master/screenshots/fdroid.png" /></a>
+
+
 
 ![Alt text](screenshots/ss.png?raw=true "Xposed Downloader")
 

@@ -265,30 +265,29 @@ public class MainActivity extends AppCompatActivity
         return prefix;
     }
 
+
     public void setList(List<String> values)  {
         ArrayList<String> names = new ArrayList<String>();
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String directory = mySharedPreferences.getString("prefDirectory",Environment.DIRECTORY_DOWNLOADS).trim();
         boolean external = mySharedPreferences.getBoolean("prefExternal",false);
-        File direct;
+
         if (external){
             directory = Environment.DIRECTORY_DOWNLOADS;
-            direct = new File(directory);
-        } else {
-            if (!(directory.startsWith("/"))) {
-                directory = "/" + directory;
-            }
-            direct = new File(Environment.getExternalStorageDirectory() + directory);
-
-            if (!direct.exists()) {
-                direct.mkdirs();
-            }
         }
+
+        File direct = new File(Environment.getExternalStorageDirectory() + "/" + directory);
+        if (!direct.exists()) {
+            direct.mkdirs();
+        }
+        Log.w(LOGTAG, directory);
         File file[] = new File[0];
         if (EasyPermissions.hasPermissions(this, perms2)) {
-            File f = new File(direct.getAbsolutePath());
-            File file1[] = f.listFiles();
-            file = file1.clone();
+            try {
+                    file = direct.listFiles();
+                } catch (Exception e) {
+                    Log.w(LOGTAG, "Cant "+e.getMessage());
+            }
         }
 
         for (String i : values) {

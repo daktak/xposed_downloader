@@ -81,7 +81,7 @@ public class Download extends Service {
         ArrayList<String> urls = new ArrayList<String>();
         try {
 
-            Document doc = Jsoup.connect(url).get();
+            Document doc = Jsoup.connect(url).timeout(10*1000).get();
             SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
             String selector = mySharedPreferences.getString("prefSelector",getString(R.string.selector_val)).trim();
             //String selector = getString(R.string.selector_val);
@@ -132,7 +132,7 @@ public class Download extends Service {
 
         try {
 
-            Document doc = Jsoup.connect(url).get();
+            Document doc = Jsoup.connect(url).timeout(10*1000).get();
             String selector = getString(R.string.apksel).trim();
             Elements links = doc.select(selector);
             for (Element link : links) {

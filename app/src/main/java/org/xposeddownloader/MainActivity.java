@@ -84,6 +84,12 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        setAlarm(this);
+        run(this);
+    }
+
     @TargetApi(21)
     public String get64(){
         String out = "";

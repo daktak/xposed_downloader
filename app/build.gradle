@@ -29,7 +29,7 @@ dependencies {
 
 android {
     lintOptions {
-        disable 'TrustAllX509TrustManager','UnusedResources','GoogleAppIndexingWarning','ResourceAsColor','IconLocation'
+        disable 'TrustAllX509TrustManager','UnusedResources','GoogleAppIndexingWarning','IconLocation'
         checkReleaseBuilds false
     }
 }

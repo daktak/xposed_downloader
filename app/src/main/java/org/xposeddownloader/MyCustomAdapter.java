@@ -1,6 +1,7 @@
 package org.xposeddownloader;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,13 +36,14 @@ public class MyCustomAdapter extends ArrayAdapter<String> {
             holder = new ViewHolder();
             holder.text = (TextView) convertView.findViewById(R.id.label);
             convertView.setTag(holder);
-            //Log.w("BasketBuild",s);
+
             try {
                 for (int j = 0; j < file.length; j++) {
 
                     if (s.equals(file[j].getName())) {
                         //Log.w("BasketBuild","have file: "+s+ ":"+file[j] + " : "+ j+"pos:" + position);
-                        holder.text.setTextColor(R.color.disabledText);
+                        int color = ContextCompat.getColor(context, R.color.disabledText);
+                        holder.text.setTextColor(color);
                         convertView.setEnabled(false);
                     }
                 }

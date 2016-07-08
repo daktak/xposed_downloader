@@ -1,2 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/daktak/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.9.1/3dc0a3bea4f876c54846cd050e688f1bfc78fc96/jsoup-1.9.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3dc0a3bea4f876c54846cd050e688f1bfc78fc96">
+        <dex dex="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/pre-dexed/debug/jsoup-1.9.1_2b4c7cd1c2a0f06724c00187294c45f5ec70be31.jar" />
+    </item>
+    <item
+        jar="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.0.0_422d08b8e22fad460d910e610767492d86a8fa09.jar" />
+    </item>
+    <item
+        jar="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_57bedb63ef658adcff6b3610608be71373b08671.jar" />
+    </item>
+    <item
+        jar="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
+        <dex dex="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/pre-dexed/debug/com.android.support-design-24.0.0_b8830a178cfb781cba77089923aea7d2825a1f22.jar" />
+    </item>
+    <item
+        jar="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.0.0_4880acb5f8399b14f0b7d3555bc4a74604b93273.jar" />
+    </item>
+    <item
+        jar="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_97238918a6b0ee7e30242387de104bf4ed8e5200.jar" />
+    </item>
+    <item
+        jar="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0_107655182b684ba4bd8c4784152851b00cf75100.jar" />
+    </item>
+    <item
+        jar="/home/daktak/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_9295d21cedcb533f2ef1ec7c476017b340dec9ee.jar" />
+    </item>
+    <item
+        jar="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/home/daktak/StudioProjects/xposed_downloader/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.0.0_c70e5a3ed4d9140de94d3347a8388fdb6a63c977.jar" />
+    </item>
+
+</items>

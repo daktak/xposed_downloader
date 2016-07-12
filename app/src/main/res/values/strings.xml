@@ -36,4 +36,7 @@
     <string name="auto">Auto Start</string>
     <string name="auto_detect">Auto</string>
     <string name="choose">Choose</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="delete">Delete</string>
 </resources>

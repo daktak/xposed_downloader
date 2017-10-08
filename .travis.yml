@@ -1,4 +1,7 @@
 language: android
+env:
+  matrix:
+    - ANDROID_TARGET=android-24
 android:
   components:
     - platform-tools

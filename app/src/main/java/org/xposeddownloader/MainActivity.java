@@ -117,13 +117,16 @@ public class MainActivity extends AppCompatActivity
             try {
                 newApi = "sdk" +Build.VERSION.SDK_INT;
             } catch (Exception e){
+		newApi = getString(R.string.apidefualt);
                 Log.w(LOGTAG, "Failed to get version");
             }
             //and newApi in list?
+	    /*
             Log.d(LOGTAG, "Detected api: " + newApi);
             if  (!Arrays.asList(getResources().getStringArray(R.array.api)).contains(newApi)) {
                 newApi = getString(R.string.apidefualt);
             }
+	    */
 
             prefEdit.remove("prefProject");
             prefEdit.putString("prefProject", newApi);

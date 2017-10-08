@@ -10,6 +10,8 @@
         <item>sdk21</item>
         <item>sdk22</item>
         <item>sdk23</item>
+	<item>sdk24</item>
+	<item>sdk25</item>
         <item>@string/auto_detect</item>
     </string-array>
 
